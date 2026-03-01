@@ -1,36 +1,131 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Monis Workspace Builder
 
-## Getting Started
+An interactive workspace design tool built for **monis.rent** to visually design and rent their perfect office setup. Users can build their dream workspace visually — select a desk, choose a chair, add accessories, preview it in real-time
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## Live Demo
+
+**Live URL:**  
+https://workspace-builder-next.vercel.app
+
+---
+
+## GitHub Repository
+
+**Repository:**  
+https://github.com/fiqrianwar/workspace-builder-next
+
+---
+
+# Features
+
+- Select a desk (minimum 2 options)
+- Select a chair (minimum 2 options)
+- Add accessories (monitors, lamps, plants)
+- Real-time visual workspace preview
+- Summary view of selected setup
+- Fully deployed on Vercel
+
+---
+
+# Tech Stack
+
+## Required Stack
+
+- **Next.js (App Router)**
+- **Tailwind CSS**
+- **TypeScript**
+- **Zustand**
+- **Vercel (Deployment)**
+
+---
+
+# Architecture Overview
+
+The application follows a **component-driven architecture** with a clear separation of concerns between presentation, business logic, and configuration.
+
+The structure is intentionally organized to keep the codebase scalable, maintainable, and easy to extend.
+
+---
+
+### Presentation Layer (UI)
+
+- Built with **Next.js (App Router)** and **TypeScript**
+- Responsible for rendering components, routing, and handling user interactions
+- Styled using **Tailwind CSS**
+- Components remain focused purely on presentation and interaction
+
+The UI layer does not contain pricing calculations or business rules.
+
+---
+
+### State & Business Logic Layer
+
+- Managed using **Zustand**
+- Handles:
+  - Desk and chair selection
+  - Accessory toggling
+  - Workspace configuration state
+  - Total rental cost
+
+This keeps business logic centralized and decoupled from UI components.
+
+---
+
+### Configuration Layer
+
+- Centralized asset definitions (desks, chairs, accessories)
+- Image mappings
+- Pricing data
+
+This ensures:
+
+- A single source of truth
+- Easy scalability when adding new products
+- Clean separation between data and UI
+
+---
+
+## Deployment
+
+- Deployed on **Vercel**
+- Optimized using Next.js production build features
+
+---
+
+## ![App Screenshot](./Architecture.png)
+
+## Project Structure
+
+```lua
+src/
+├── app/
+│   └── page.tsx
+├── components/
+│   └── layout/
+│   └── primitives/
+│   └── ui/
+├── constants/
+├── features/
+│   └── Workspace/
+├── lib/
+├── store/
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+# What I'd Improve With More Time
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- Align visual style more closely with monis.rent branding
+- Connect to a backend API for real rental submission
+- Store configurations in a database
+- Add authentication for returning users
+- Implement cart system with checkout confirmation
+- Introduce smooth animations
+- Improve mobile interaction gestures
+- Add onboarding tooltip walkthrough for first-time users
+- Optimize image loading strategy
+- Add lazy loading for accessory assets
+- Implement skeleton loaders
+- Dynamic responsive
+- Add unit tests
+- Add CI/CD
