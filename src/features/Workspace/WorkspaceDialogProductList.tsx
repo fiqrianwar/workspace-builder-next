@@ -17,7 +17,7 @@ const WorkspaceDialogProductList = forwardRef<TypeRef>((_, ref) => {
       dialogTitle="Catalog List"
       dialogDesc={dialogDesc}
     >
-      <div className="max-h-[80vh] overflow-y-auto space-y-5">
+      <div className="max-h-[65vh] overflow-y-auto space-y-5">
         <WorkspaceProductCatalog title="Desk" category="desk" />
         <WorkspaceProductCatalog title="Chair" category="chair" />
 

@@ -7,7 +7,7 @@ const WorkspaceOpening = ({
 }) => {
   return (
     <div className="flex justify-around">
-      <div className="max-w-md m-4 mt-62 space-y-4">
+      <div className="max-w-md m-4 mt-52 space-y-4">
         <h1 className="text-2xl text-center font-serif font-bold">
           Design your perfect workspace
         </h1>

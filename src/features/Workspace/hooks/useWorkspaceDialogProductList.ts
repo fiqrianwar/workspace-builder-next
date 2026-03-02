@@ -1,4 +1,9 @@
-import { useState, useImperativeHandle } from "react";
+import {
+  useState,
+  useImperativeHandle,
+  useEffect,
+  useEffectEvent,
+} from "react";
 import { SlotPosition, TypeRef } from "../types";
 import { useWorkspaceStore } from "@/store/useDeskStore";
 
@@ -7,6 +12,16 @@ export const useWorkspaceDialogProductList = (ref: React.Ref<TypeRef>) => {
   const [positions, setPosition] = useState<SlotPosition>();
 
   const { selected } = useWorkspaceStore();
+
+  const updateCloseDialog = useEffectEvent(() => {
+    setOpenDialog(false);
+  });
+
+  useEffect(() => {
+    if (selected.chair !== null && selected.desk !== null) {
+      updateCloseDialog();
+    }
+  }, [selected.chair, selected.desk, setOpenDialog]);
 
   const handleCloseModal = () => setOpenDialog(false);
 
@@ -37,5 +52,6 @@ export const useWorkspaceDialogProductList = (ref: React.Ref<TypeRef>) => {
     dialogDesc,
     handleCloseModal,
     handleOpenModal,
+    setOpenDialog,
   };
 };
